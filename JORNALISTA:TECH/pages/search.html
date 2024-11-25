@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA-1 Resultados da Pesquisa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 20px 0;
+        }
+        .search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 24px 0 0 24px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #1a73e8;
+            border: none;
+            border-radius: 0 24px 24px 0;
+            cursor: pointer;
+        }
+        .main-content {
+            display: flex;
+            margin-top: 40px;
+        }
+        .results {
+            width: 66%;
+            margin-right: 2%;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+        }
+        .card-image-container {
+            width: 200px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        .card-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        .card-source {
+            font-size: 14px;
+            color: #006621;
+        }
+        .chat-container {
+            width: 32%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+        .chat-input {
+            display: flex;
+        }
+        .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px 0 0 4px;
+        }
+        .chat-input button {
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .typewriter {
+            --blue: #5C86FF;
+            --blue-dark: #275EFE;
+            --key: #fff;
+            --paper: #EEF0FD;
+            --text: #D3D4EC;
+            --tool: #FBC56C;
+            --duration: 3s;
+            position: relative;
+            -webkit-animation: bounce05 var(--duration) linear infinite;
+            animation: bounce05 var(--duration) linear infinite;
+        }
+        .typewriter .slide {
+            width: 92px;
+            height: 20px;
+            border-radius: 3px;
+            margin-left: 14px;
+            transform: translateX(14px);
+            background: linear-gradient(var(--blue), var(--blue-dark));
+            -webkit-animation: slide05 var(--duration) ease infinite;
+            animation: slide05 var(--duration) ease infinite;
+        }
+        .typewriter .slide:before, .typewriter .slide:after,
+        .typewriter .slide i:before {
+            content: "";
+            position: absolute;
+            background: var(--tool);
+        }
+        .typewriter .slide:before {
+            width: 2px;
+            height: 8px;
+            top: 6px;
+            left: 100%;
+        }
+        .typewriter .slide:after {
+            left: 94px;
+            top: 3px;
+            height: 14px;
+            width: 6px;
+            border-radius: 3px;
+        }
+        .typewriter .slide i {
+            display: block;
+            position: absolute;
+            right: 100%;
+            width: 6px;
+            height: 4px;
+            top: 4px;
+            background: var(--tool);
+        }
+        .typewriter .slide i:before {
+            right: 100%;
+            top: -2px;
+            width: 4px;
+            border-radius: 2px;
+            height: 14px;
+        }
+        .typewriter .paper {
+            position: absolute;
+            left: 24px;
+            top: -26px;
+            width: 40px;
+            height: 46px;
+            border-radius: 5px;
+            background: var(--paper);
+            transform: translateY(46px);
+            -webkit-animation: paper05 var(--duration) linear infinite;
+            animation: paper05 var(--duration) linear infinite;
+        }
+        .typewriter .paper:before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            right: 6px;
+            top: 7px;
+            border-radius: 2px;
+            height: 4px;
+            transform: scaleY(0.8);
+            background: var(--text);
+            box-shadow: 0 12px 0 var(--text), 0 24px 0 var(--text), 0 36px 0 var(--text);
+        }
+        .typewriter .keyboard {
+            width: 120px;
+            height: 56px;
+            margin-top: -10px;
+            z-index: 1;
+            position: relative;
+        }
+        .typewriter .keyboard:before, .typewriter .keyboard:after {
+            content: "";
+            position: absolute;
+        }
+        .typewriter .keyboard:before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 7px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+            transform: perspective(10px) rotateX(2deg);
+            transform-origin: 50% 100%;
+        }
+        .typewriter .keyboard:after {
+            left: 2px;
+            top: 25px;
+            width: 11px;
+            height: 4px;
+            border-radius: 2px;
+            box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            -webkit-animation: keyboard05 var(--duration) linear infinite;
+            animation: keyboard05 var(--duration) linear infinite;
+        }
+        
+        @keyframes bounce05 {
+            85%, 92%, 100% {
+                transform: translateY(0);
+            }
+            89% {
+                transform: translateY(-4px);
+            }
+            95% {
+                transform: translateY(2px);
+            }
+        }
+        @keyframes slide05 {
+            5% {
+                transform: translateX(14px);
+            }
+            15%, 30% {
+                transform: translateX(6px);
+            }
+            40%, 55% {
+                transform: translateX(0);
+            }
+            65%, 70% {
+                transform: translateX(-4px);
+            }
+            80%, 89% {
+                transform: translateX(-12px);
+            }
+            100% {
+                transform: translateX(14px);
+            }
+        }
+        @keyframes paper05 {
+            5% {
+                transform: translateY(46px);
+            }
+            20%, 30% {
+                transform: translateY(34px);
+            }
+            40%, 55% {
+                transform: translateY(22px);
+            }
+            65%, 70% {
+                transform: translateY(10px);
+            }
+            80%, 85% {
+                transform: translateY(0);
+            }
+            92%, 100% {
+                transform: translateY(46px);
+            }
+        }
+        @keyframes keyboard05 {
+            5%, 12%, 21%, 30%, 39%, 48%, 57%, 66%, 75%, 84% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            9% {
+                box-shadow: 15px 2px 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            18% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 2px 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            27% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 12px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            36% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 12px 0 var(--key), 60px 12px 0 var(--key), 68px 12px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            45% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 2px 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            54% {
+                box-shadow: 15px 0 0 var(--key), 30px 2px 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            63% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 12px 0 var(--key);
+            }
+            72% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 2px 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 10px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+            81% {
+                box-shadow: 15px 0 0 var(--key), 30px 0 0 var(--key), 45px 0 0 var(--key), 60px 0 0 var(--key), 75px 0 0 var(--key), 90px 0 0 var(--key), 22px 10px 0 var(--key), 37px 12px 0 var(--key), 52px 10px 0 var(--key), 60px 10px 0 var(--key), 68px 10px 0 var(--key), 83px 10px 0 var(--key);
+            }
+        }
+        .user-message, .ai-message {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            max-width: 85%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: auto;
+            margin-right: 0;
+        }
+        .ai-message {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            margin-right: auto;
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <form id="search-form" class="search-form">
+                <input type="text" id="search-input" class="search-input" placeholder="Pesquise notícias...">
+                <button type="submit" class="search-button">Pesquisar</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="loading">
+            <div class="typewriter">
+                <div class="slide"><i></i></div>
+                <div class="paper"></div>
+                <div class="keyboard"></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="results" class="results"></div>
+            <div class="chat-container">
+                <h2>Chat com IA</h2>
+                <div id="chat-messages" class="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+                    <button id="chat-submit">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        async function callSaturnAPI(query, category) {
+            try {
+                const params = new URLSearchParams({
+                    query: query.trim(),
+                    category: category || 'Notícias Gerais'
+                });
+
+                const apiUrl = `https://stec.cx/saturn/get-news-2.php?${params.toString()}`;
+                console.log(`Consultando a API Saturn com o URL: ${apiUrl}`);
+
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Resposta da API Saturn:', data);
+                return data;
+            } catch (error) {
+                console.error('Erro ao chamar API Saturn:', error);
+                throw error;
+            }
+        }
+
+        function extractKeywords(text) {
+            const words = text.split(/\s+/);
+            const keywords = words.filter(word => {
+                const commonWords = ["de", "sobre", "a", "o", "é", "e", "um", "uma", "para"];
+                const lowercaseWord = word.toLowerCase();
+                return !commonWords.includes(lowercaseWord);
+            });
+            return keywords.join(" ");
+        }
+
+        async function callGeminiAPI(content) {
+            try {
+                const apiKey = 'AIzaSyDJC5a7eWgMYRU2hCjWNzjT1wHDm3Dixvg';
+                const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent';
+
+                console.log('Enviando requisição para Gemini API:', content);
+
+                const response = await fetch(`${apiUrl}?key=${apiKey}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "contents": [{
+                            "parts": [{
+                                "text": `Você é um assistente especializado em análise de notícias. 
+                                        Por favor, analise estas manchetes e forneça um breve resumo 
+                                        em português sobre o contexto e a importância destas notícias: ${content}`
+                            }]
+                        }],
+                        "generationConfig": {
+                            "temperature": 0.7,
+                            "topK": 40,
+                            "topP": 0.95,
+                            "maxOutputTokens": 1024,
+                        }
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Resposta da Gemini API:', data);
+                
+                if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    throw new Error('Estrutura de resposta inválida da API Gemini');
+                }
+            } catch (error) {
+                console.error('Erro ao chamar Gemini API:', error);
+                throw error;
+            }
+        }
+
+        async function performSearch() {
+            const query = document.getElementById("search-input").value;
+            const category = getQueryParameter("category") || "Notícias Gerais";
+            
+            if (!query.trim()) {
+                displayError("Por favor, insira um termo de pesquisa.");
+                return;
+            }
+
+            console.log(`Iniciando pesquisa para: "${query}" na categoria "${category}"`);
+            
+            document.getElementById("loading").style.display = "flex";
+            document.getElementById("results").innerHTML = "";
+            
+            try {
+                const data = await callSaturnAPI(query, category);
+                
+                if (!Array.isArray(data)) {
+                    throw new Error("Formato de resposta inválido da API Saturn");
+                }
+                
+                if (data.length === 0) {
+                    displayError("Nenhum resultado encontrado para sua pesquisa.");
+                    return;
+                }
+
+                displayResults(data);
+                updateSearchHistory(query);
+
+                // Gerar resumo com a IA
+                const titles = data.map(item => item.title).join('. ');
+                const aiPrompt = `Manchetes das notícias: ${titles}`;
+                
+                try {
+                    const aiResponse = await callGeminiAPI(aiPrompt);
+                    addMessage("📰 Análise das Notícias:\n\n" + aiResponse);
+                } catch (error) {
+                    console.error("Erro ao gerar análise com IA:", error);
+                    addMessage("❌ Desculpe, não foi possível gerar uma análise neste momento. Por favor, tente novamente mais tarde.");
+                }
+
+            } catch (error) {
+                console.error("Erro durante a pesquisa:", error);
+                displayError("Ocorreu um erro ao processar sua pesquisa. Por favor, tente novamente.");
+            } finally {
+                document.getElementById("loading").style.display = "none";
+            }
+        }
+
+        function displayResults(results) {
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = '';
+
+            results.forEach((result) => {
+                console.log(`Exibindo resultado: ${result.title}`);
+
+                const card = document.createElement("div");
+                card.className = "card";
+
+                const imgContainer = document.createElement("div");
+                imgContainer.className = "card-image-container";
+
+                const img = document.createElement("img");
+                img.className = "card-image";
+                img.alt = "Ícone do site";
+                
+                // Usar o favicon do site em vez do APIFlash
+                const domain = new URL(result.url).hostname;
+                img.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+
+                img.onerror = () => {
+                    img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="150" viewBox="0 0 200 150"><rect width="100%" height="100%" fill="%23f0f0f0"/><text x="50%" y="50%" font-family="Arial" font-size="14" fill="%23666" text-anchor="middle">Imagem não disponível</text></svg>';
+                };
+
+                imgContainer.appendChild(img);
+
+                const content = document.createElement("div");
+                content.className = "card-content";
+
+                const title = document.createElement("a");
+                title.className = "card-title";
+                title.href = result.url;
+                title.target = "_blank";
+                title.textContent = result.title;
+
+                const source = document.createElement("p");
+                source.className = "card-source";
+                source.textContent = domain;
+
+                content.appendChild(title);
+                content.appendChild(source);
+
+                card.appendChild(imgContainer);
+                card.appendChild(content);
+
+                resultsContainer.appendChild(card);
+            });
+        }
+
+        function displayError(message) {
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = `
+                <div style="background-color: #fee; color: #c00; padding: 1em; border-radius: 4px; margin-top: 1em;">
+                    <p style="margin: 0;">${message}</p>
+                </div>
+            `;
+            console.error("Erro exibido:", message);
+        }
+
+        function updateSearchHistory(query) {
+            if (!searchHistory.includes(query)) {
+                searchHistory.unshift(query);
+                if (searchHistory.length > 5) {
+                    searchHistory.pop();
+                }
+                localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+            }
+        }
+
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement("div");
+            messageElement.className = isUser ? "user-message" : "ai-message";
+            messageElement.textContent = message;
+            
+            const chatMessages = document.getElementById("chat-messages");
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        document.getElementById("search-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            console.log("Formulário de pesquisa enviado");
+            performSearch();
+        });
+
+        document.getElementById("chat-submit").addEventListener("click", async function() {
+            const message = document.getElementById("chat-input").value.trim();
+            if (message) {
+                addMessage(message, true);
+                document.getElementById("chat-input").value = "";
+                
+                try {
+                    const response = await callGeminiAPI(message);
+                    addMessage(response);
+                } catch (error) {
+                    console.error("Erro ao chamar a API do Gemini:", error);
+                    addMessage("Desculpe, ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.");
+                }
+            }
+        });
+
+        document.getElementById("chat-input").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                document.getElementById("chat-submit").click();
+            }
+        });
+
+        // Initialize the page
+        const queryFromUrl = getQueryParameter("q");
+        if (queryFromUrl) {
+            document.getElementById("search-input").value = queryFromUrl;
+            performSearch();
+        }
+    </script>
+</body>
+</html>
