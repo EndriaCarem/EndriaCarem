@@ -22,8 +22,8 @@
 ---
 
 ## 📚 Minha Stack Tecnológica
-- **Front-end**: React, Vue, CSS3, HTML5, Tailwind CSS
-- **Back-end**: Node.js, Express, **Java**, **C++**
+- **Front-end**: React, Flutter, CSS3, HTML5, Tailwind CSS
+- **Back-end**: Node.js, Express, **Java**, **C++**, **Dart**
 - **Banco de dados**: MongoDB, PostgreSQL, MySQL, **Bancos de Dados Serverless** (ex. Firebase, AWS DynamoDB)
 - **Outros**: JavaScript, TypeScript, **Engenharia de IA**
 
