@@ -1,7 +1,7 @@
 # 👋 Olá, eu sou a @EndriaCarem
 
 ### 👀 O que estou fazendo agora?
-- 🧑‍💻 **Atualmente estou aprendendo**: JavaScript, React, e UI/UX design.
+- 🧑‍💻 **Atualmente estou aprendendo**: JavaScript, React, Dart, e UI/UX design.
 - 🚀 **Objetivos do momento**: Aprender mais sobre Machine Learning e como integrar isso com front-end.
 
 ### 🌱 Projetos e Colaborações
