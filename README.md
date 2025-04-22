@@ -6,7 +6,7 @@
 
 ### 🌱 Projetos e Colaborações
 - 💡 **Estou buscando colaborar em projetos** de open source relacionados a **front-end**, **design de interfaces** e **tecnologias emergentes**.
-- 📦 **Meu portfólio**: [endriacarem.dev](https://endriacarem.dev)
+- 📦 **Meu portfólio**: [endriacarem.dev](https://endriacarem.github.io/mypage.github.io)
 
 ### 📬 Como me encontrar
 - 💌 **Email**: endriacarem@example.com
