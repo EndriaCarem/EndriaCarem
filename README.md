@@ -9,7 +9,7 @@
 - 📦 **Meu portfólio**: [endriacarem.dev](https://endriacarem.github.io/mypage.github.io)
 
 ### 📬 Como me encontrar
-- 💌 **Email**: endriacarem@example.com
+- 💌 **Email**: endrya161624@gmail.com
 - 🌍 **LinkedIn**: [linkedin.com/in/endria-carem-419007199/](https://www.linkedin.com/in/endria-carem-419007199/)
 - 📂 **GitHub**: [EndriaCarem](https://github.com/EndriaCarem)
 - 📸 **Instagram**: [Endria_Keury](https://www.instagram.com/Endria_Keury)
