@@ -139,7 +139,7 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
 <!--Snake Animation-->
 <h2 align="center">🐍 Cᴏɴᴛʀɪʙᴜᴛɪᴏɴ Sɴᴀᴋᴇ 🐍</h2>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/EndriaCarem/EndriaCarem/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+  <img src="https://github.com/EndriaCarem/EndriaCarem/blob/output/github-contribution-grid-snake.svg" alt="Snake animation" />
 </div>
 
 ---
