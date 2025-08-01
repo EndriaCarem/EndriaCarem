@@ -42,7 +42,7 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif">
   <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif">
-  <img align="left" alt="Tech Stack Animation" src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="400">
+  <img align="left" alt="Tech Stack Animation" src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif">
 </picture>
 
 <br />
@@ -64,41 +64,6 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
 
 <br /><br /><br /><br />
 
-<!--Tech Stack Section-->
-<h2 align="center">🛠️ Minha Stack Tecnológica</h2>
-
-<div align="center">
-
-### 🎨 Front-end
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-### ⚙️ Back-end
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-
-### 🗄️ Banco de Dados
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
-![AWS DynamoDB](https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white)
-
-### 🔧 Outros
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![AI Engineering](https://img.shields.io/badge/AI%20Engineering-FF6B6B?style=for-the-badge&logo=openai&logoColor=white)
-
-</div>
-
-<br />
-
 <!--Trophies Section-->
 <h2 align="center">🏆 Gɪᴛʜᴜʙ Tʀᴏᴘʜɪᴇs 🏆</h2>
 <p align="center">
@@ -108,6 +73,15 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
       <source media="(prefers-color-scheme: light)" srcset="https://github-profile-trophy.vercel.app/?username=EndriaCarem&no-bg=true&row=2&column=6&margin-w=20&margin-h=20">
       <img alt="GitHub Trophies" src="https://github-profile-trophy.vercel.app/?username=EndriaCarem&no-bg=true&no-frame=true&row=2&column=6&margin-w=20&margin-h=20">
     </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/daytonaio/daytona">
+    <img
+      src="https://api.vaunt.dev/v1/github/entities/EndriaCarem/achievements?format=svg&limit=6"
+      width="400"
+    />
   </a>
 </p>
 
@@ -136,7 +110,7 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
   </tr>
   <tr>
     <td width="50%">
-      <h3 align="center"><strong>Pʀᴏᴊᴇᴛᴏ ᴇᴍ Dᴇsᴛᴀǫᴜᴇ</strong></h3>
+      <h3 align="center"><strong>Lᴀᴛᴇsᴛ Pʀᴏᴊᴇᴄᴛ</strong></h3>
       <p align="center">
         <a href="https://github.com/EndriaCarem/whatsapp_ia">
           <img align="center" width="470" src="https://github-readme-stats.vercel.app/api/pin/?username=EndriaCarem&repo=whatsapp_ia&theme=nightowl&show_owner=true&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff" alt="WhatsApp IA" />
@@ -144,10 +118,10 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
       </p>
     </td>
     <td width="50%">
-      <h3 align="center"><strong>Lɪɴɢᴜᴀɢᴇɴs ᴍᴀɪs Usᴀᴅᴀs</strong></h3>
+      <h3 align="center"><strong>Tᴏᴘ Cᴏɴᴛʀɪʙᴜᴛɪᴏɴs</strong></h3>
       <p align="center">
         <a href="https://github.com/EndriaCarem">
-          <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=EndriaCarem&layout=compact&theme=nightowl&show_owner=true&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff" alt="Top Languages" />
+          <img align="center" src="https://github-contributor-stats.vercel.app/api?username=EndriaCarem&limit=2&theme=nightowl&show_owner=true&combine_all_yearly_contributions=false&bg_color=0,000000,441350&title_color=c56a90&text_color=ffffff" alt="Top Repo" />
         </a>
       </p>
     </td>
@@ -185,26 +159,16 @@ Eu sou uma entusiasta de Inteligência Artificial e adoro explorar novas tecnolo
 <h2 align="center">🤝 Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Mᴇ 🤝</h2>
 
 <div align="center">
-  <a href="mailto:endrya161624@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" style="margin-bottom: 5px;" />
-  </a>
-  <a href="https://linkedin.com/in/endria-carem-419007199/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="margin-bottom: 5px;" />
-  </a>
-  <a href="https://github.com/EndriaCarem" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" style="margin-bottom: 5px;" />
-  </a>
-  <a href="https://instagram.com/Endria_Xeury" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" style="margin-bottom: 5px;" />
-  </a>
-  <a href="https://endriacarem.dev" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio" style="margin-bottom: 5px;" />
-  </a>
+  <a href="mailto:endrya161624@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" style="margin-bottom: 5px;" /></a>
+  <a href="https://linkedin.com/in/endria-carem-419007199/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="margin-bottom: 5px;" /></a>
+  <a href="https://github.com/EndriaCarem" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" style="margin-bottom: 5px;" /></a>
+  <a href="https://instagram.com/Endria_Xeury" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" style="margin-bottom: 5px;" /></a>
+  <a href="https://endriacarem.dev" target="_blank"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio" style="margin-bottom: 5px;" /></a>
 </div>
 
 <br/>
 
 <!--Footer-->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=65&section=footer"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=65&section=footer"/>
 </p>
