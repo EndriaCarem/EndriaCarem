@@ -1,35 +1,22 @@
-name: Generate Snake
+name: Snake Animation
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        
-      - name: Generate snake.svg
-        uses: Platane/snk@v2
+      - uses: actions/checkout@v3
+      - uses: Platane/snk@v2
         with:
           github_user_name: EndriaCarem
           outputs: dist/snake.svg
-          
-      - name: Push snake.svg to output branch
-        uses: crazy-max/ghaction-github-pages@v2.6.0
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target_branch: output
-          build_dir: dist
-          commit_message: Update snake animation
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
