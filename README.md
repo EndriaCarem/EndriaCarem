@@ -23,7 +23,7 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
 - 🌱 Atualmente estou aprendendo JavaScript, React, UI/UX design, e Engenharia de Inteligência Artificial
 - 🎯 Objetivos do momento: Aprender mais sobre Machine Learning, integrar com front-end e aprimorar conhecimentos em IA
 - 💡 Buscando colaborar em projetos open source relacionados a front-end, design de interfaces e tecnologias emergentes
-- 💻 Visite meu [Portfólio](https://endriacarem.dev) para mais detalhes sobre mim
+- 💻 Visite meu [Portfólio](https://endriacarem.github.io/mypage.github.io/) para mais detalhes sobre mim
 - ❤ Contribuindo para Open Source
 - 🔥 Explorando novas tecnologias e tendências de design
 
