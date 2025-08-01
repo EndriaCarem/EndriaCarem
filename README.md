@@ -136,6 +136,12 @@ Sou uma Desenvolvedora Full Stack e Entusiasta de Inteligência Artificial com g
     <img src="https://github-readme-activity-graph.vercel.app/graph?username=EndriaCarem&bg_color=220a28&&color=ffffff&line=c56a90&point=ffeb95&area=false&hide_border=false" border-radius="15">
 </div>
 
+<!--Snake Animation-->
+<h2 align="center">🐍 Cᴏɴᴛʀɪʙᴜᴛɪᴏɴ Sɴᴀᴋᴇ 🐍</h2>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/EndriaCarem/EndriaCarem/output/github-contribution-grid-snake.svg" alt="Snake animation" />
+</div>
+
 ---
 
 <!--Dynamic Quote card updates everyday at 12 PM-->
